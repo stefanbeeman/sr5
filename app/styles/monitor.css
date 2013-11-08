@@ -1,0 +1,35 @@
+#monitor {
+    top: 50px;
+    left: 0px;
+    position: fixed;
+}
+
+#monitor > .panel {
+    float: left;
+}
+
+#monitor li {
+    height: 42px;
+    background-color: rgba(0,0,0,0);
+}
+
+#monitor, #monitor .panel, #monitor .list-group, #monitor li {
+    background-color: rgba(0,0,0,0);
+}
+
+#monitor .list-group {
+    position: relative;
+}
+
+#monitor .progress {
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+#monitor .progress-bar {
+    transition: height .6s ease;
+}

@@ -1,0 +1,13 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Attributes and Skills</h3>
+    </div>
+    <table class="table table-bordered stats">
+        <tr ng-repeat="stat in rules.attributes">
+            <th class="active">{{stat}} <span class="label label-primary">{{pc.stats[stat]}}</span></th>
+            <td ng-repeat="(skill, rating) in pc.skills[stat]">
+                <span>{{skill}}</span>
+                <span class="label label-{{skill_types[rules.skills[stat][skill].type]}}">{{pc.stats[stat] + rating}}</span>
+            </td>
+        </tr>
+</div>

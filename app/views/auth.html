@@ -1,0 +1,24 @@
+<div class="jumbotron container" ng-controller="AuthCtrl">
+    <h2>SR5</h2>
+    <p>I'm afraid you're going to need to present some credentials before you go any farther.</p>
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-4">
+                <input  type="email" 
+                        class="form-control" 
+                        placeholder="Email" 
+                        ng-model="user_email"
+                >
+            </div>
+            <div class="col-md-4">
+                <input 
+                        type="password" 
+                        class="form-control" 
+                        placeholder="Password"
+                        ng-model="user_password"
+                >
+            </div>
+        </div>
+        <span class="btn btn-primary" ng-click="login()">Log In</span>
+    </div>
+</div>

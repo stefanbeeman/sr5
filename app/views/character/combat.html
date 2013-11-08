@@ -1,0 +1,37 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Vital Stats</h3>
+    </div>
+    <table class="table centered">
+        <tr class="active">
+            <th>Physical Limit</th>
+            <th>Mental Limit</th>
+            <th>Social Limit</th>
+        </tr>
+        <tr>
+            <td>{{physcialLimit(pc.stats)}}</td>
+            <td>{{mentalLimit(pc.stats)}}</td>
+            <td>{{socialLimit(pc.stats)}}</td>
+        </tr>
+        <tr class="active">
+            <th>Initiative</th>
+            <th>Defense</th>
+            <th>DR</th>
+        </tr>
+        <tr>
+            <td>{{pc.stats.reaction + pc.stats.intuition}} + {{pc.initDice}}d6</td>
+            <td><span class="label label-primary">{{pc.stats.reaction + pc.stats.intuition}}</span></td>
+            <td><span class="label label-primary">{{pc.stats.body + pc.armor}}</span></td>
+        </tr>
+        <tr class="active">
+            <th>Athletics</th>
+            <th>Composure</th>
+            <th>Tenacity</th>
+        </tr>
+        <tr>
+            <td><span class="label label-primary">{{pc.stats.strength + pc.stats.agility}}</span></td>
+            <td><span class="label label-primary">{{pc.stats.intuition + pc.stats.willpower}}</span></td>
+            <td><span class="label label-primary">{{pc.stats.logic + pc.stats.intuition}}</span></td>
+        </tr>
+    </table>
+</div>

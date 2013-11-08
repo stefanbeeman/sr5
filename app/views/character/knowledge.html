@@ -1,0 +1,29 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Knowledge Skills</h3>
+    </div>
+
+    <table class="table table-bordered stats">
+        <tr ng-if="pc.knowledge.academic"><th class="active">Academic</th></tr>
+        <tr ng-repeat="(skill, rating) in pc.knowledge.academic">
+            <td>{{skill}} <span class="label label-default">{{pc.stats.logic + rating}}</span></td>
+        </tr>
+        <tr ng-if="pc.knowledge.professional"><th class="active">Professional</th></tr>
+        <tr ng-repeat="(skill, rating) in pc.knowledge.professional">
+            <td>{{skill}} <span class="label label-default">{{pc.stats.logic + rating}}</span></td>
+        </tr>
+        <tr ng-if="pc.knowledge.interest"><th class="active">Interest</th></tr>
+        <tr ng-repeat="(skill, rating) in pc.knowledge.interest">
+            <td>{{skill}} <span class="label label-default">{{pc.stats.intuition + rating}}</span></td>
+        </tr>
+        <tr ng-if="pc.knowledge.street"><th class="active">Street</th></tr>
+        <tr ng-repeat="(skill, rating) in pc.knowledge.street">
+            <td>{{skill}} <span class="label label-default">{{pc.stats.intuition + rating}}</span></td>
+        </tr>
+        <tr ng-if="pc.knowledge.language"><th class="active">Language</th></tr>
+        <tr ng-repeat="(skill, rating) in pc.knowledge.language" ng-switch="rating">
+            <td ng-switch-when="0">{{skill}} <span class="label label-default">N</span></td>
+            <td ng-switch-default>{{skill}} <span class="label label-default">{{pc.stats.intuition + rating}}</span></td>
+        </tr>
+    </table>
+</div>

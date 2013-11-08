@@ -1,0 +1,15 @@
+table.centered th, table.centered td {
+    text-align: center;
+}
+
+table.stats .label {
+    float: right;
+}
+
+.label-magical {
+    background-color: #b85cb8;
+}
+
+.label-vehicle {
+    background-color: #f78a1d;
+}

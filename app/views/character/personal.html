@@ -1,0 +1,43 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Personal Data</h3>
+    </div>
+    <table class="table centered">
+        <tr class="active">
+            <th>Alias</th>
+            <th>Metatype</th>
+            <th>Ethnicity</th>
+            <th>Gender</th>
+        </tr>
+        <tr>
+            <td>{{pc.alias}}</td>
+            <td>{{pc.metatype.capitalize()}}</td>
+            <td>{{pc.ethnicity.capitalize()}}</td>
+            <td>{{pc.gender.capitalize()}}</td>
+        </tr>
+        <tr class="active">
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Hair</th>
+            <th>Eyes</th>
+        </tr>
+        <tr>
+            <td>{{pc.height}} inches</td>
+            <td>{{pc.weight}} lbs.</td>
+            <td>{{pc.hair.capitalize()}}</td>
+            <td>{{pc.eyes.capitalize()}}</td>
+        </tr>
+        <tr class="active">
+            <th>Karma</th>
+            <th>Respect</th>
+            <th>Notoriety</th>
+            <th>Publicity</th>
+        </tr>
+        <tr>
+            <td>{{pc.karma}}/{{pc.totalKarma}}</td>
+            <td>{{pc.respect}}</td>
+            <td>{{pc.notoriety}}</td>
+            <td>{{pc.publicity}}</td>
+        </tr>
+    </table>
+</div>
