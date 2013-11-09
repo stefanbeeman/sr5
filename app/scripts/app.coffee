@@ -19,6 +19,3 @@ angular.module('sr5App', [
             .otherwise
                 redirectTo: '/'
     )
-
-    .run (simpleLogin) ->
-        simpleLogin.connect('https://sr5.firebaseio.com/')

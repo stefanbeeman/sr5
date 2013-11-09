@@ -1,10 +1,20 @@
 'use strict'
 
 angular.module('sr5App')
-    .controller 'IndexCtrl', (simpleLogin, $scope) ->
+    .controller 'IndexCtrl', ($scope, angularFire, angularFireAuth) ->
 
-        $scope.current_user = simpleLogin.current_user
+        $scope.pc = null
+        $scope.user = null
 
-        $scope.$on 'simpleLogin.update', (e, user) ->
+        authRef = new Firebase("https://sr5.firebaseio.com/")
+        angularFireAuth.initialize authRef,
+            scope: $scope, 
+            name: "user"
+
+        get_pc = ->
+            ref = new Firebase('https://sr5.firebaseio.com/pc/' + $scope.user.id)
+            angularFire(ref, $scope, "pc")
+
+        $scope.$on 'angularFireAuth:login', (e, user) ->
             $scope.$apply ->
-                $scope.current_user = user
+                get_pc()

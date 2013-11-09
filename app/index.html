@@ -31,11 +31,9 @@
 
     <!-- Add your site or application content here -->
     <div ng-include="'views/navbar.html'"></div>
-    <div id="monitor" ng-include="'views/monitor.html'" data-spy="affix" data-offset-top="50"></div>
-    <div ng-controller="IndexCtrl">
-      <div class="container" ng-view="" ng-show="current_user"></div>
-      <div class="container" ng-hide="current_user" ng-include="'views/auth.html'"></div>
-    </div>
+    <div class="container" ng-view="" ng-show="user"></div>
+    <div id="monitor" ng-show="user" ng-include="'views/monitor.html'"></div>
+    <div class="container" ng-hide="user" ng-include="'views/auth.html'"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -68,6 +66,7 @@
     <script src="scripts/controllers/melee.js"></script>
     <script src="scripts/services/simpleLogin.js"></script>
     <script src="scripts/services/rules.js"></script>
+    <script src="scripts/controllers/monitor.js"></script>
     <!-- endbuild -->
 </body>
 </html>
