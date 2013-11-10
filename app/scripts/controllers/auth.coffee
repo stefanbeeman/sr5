@@ -18,7 +18,8 @@ angular.module('sr5App')
 
         $scope.$on 'angularFireAuth:login', (e, user) ->
             ref = new Firebase('https://sr5.firebaseio.com/pc/' + $scope.user.id)
-            angularFire(ref, $rootScope, "pc")
+            angularFire(ref, $rootScope, "pc").then ->
+                $rootScope.$broadcast 'pc:get', $rootScope.pc
 
         $scope.login = ->
             if $scope.user_email? and $scope.user_password?

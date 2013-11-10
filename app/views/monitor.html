@@ -1,26 +1,28 @@
-<div class="panel panel-warning">
-    <div class="panel-heading">
-        <h3 class="panel-title">S</h3>
-    </div>
-    <ul class="list-group">
-        <div class="progress">
-            <div class="progress-bar progress-bar-warning"></div>
+<div id="monitor" ng-controller="MonitorCtrl">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title">S</h3>
         </div>
-        <li class="list-group-item" ng-repeat="n in (1).upto(stunBoxes)">
-            <span ng-if="n % 3 == 0">-{{n/3}}</span>
-        </li>
-    </ul>
-</div>
-<div class="panel panel-danger">
-    <div class="panel-heading">
-        <h3 class="panel-title">P</h3>
+        <ul class="list-group">
+            <div class="progress">
+                <div class="progress-bar progress-bar-warning" style="height: {{41 * pc.damage.stun}}px;"></div>
+            </div>
+            <li class="list-group-item" ng-repeat="n in (1).upto(stunBoxes)">
+                <span ng-if="n % 3 == 0">-{{n/3}}</span>
+            </li>
+        </ul>
     </div>
-    <ul class="list-group">
-        <div class="progress">
-            <div class="progress-bar progress-bar-danger"></div>
-        </div>    
-        <li class="list-group-item" ng-repeat="n in (1).upto(physicalBoxes)">
-            <span ng-if="n % 3 == 0">-{{n/3}}</span>
-        </li>
-    </ul>
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            <h3 class="panel-title">P</h3>
+        </div>
+        <ul class="list-group">
+            <div class="progress">
+                <div class="progress-bar progress-bar-danger" style="height: {{41 * pc.damage.physical}}px;"></div>
+            </div>    
+            <li class="list-group-item" ng-repeat="n in (1).upto(physicalBoxes)">
+                <span ng-if="n % 3 == 0">-{{n/3}}</span>
+            </li>
+        </ul>
+    </div>
 </div>

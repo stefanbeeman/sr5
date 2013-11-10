@@ -31,5 +31,7 @@
 }
 
 #monitor .progress-bar {
+    width: 100%;
     transition: height .6s ease;
+    opacity: 0.8;
 }
