@@ -1,17 +1,17 @@
 'use strict'
 
-describe 'Controller: NpcsCtrl', () ->
+describe 'Controller: StoreCtrl', () ->
 
   # load the controller's module
   beforeEach module 'sr5App'
 
-  NpcsCtrl = {}
+  StoreCtrl = {}
   scope = {}
 
   # Initialize the controller and a mock scope
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
-    NpcsCtrl = $controller 'NpcsCtrl', {
+    StoreCtrl = $controller 'StoreCtrl', {
       $scope: scope
     }
 

@@ -1,0 +1,17 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th ng-repeat="field in fields">{{field}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in list">
+            <td ng-repeat="field in fields" ng-switch="field">
+                <span ng-switch-when="Avail">{{item.avail}}{{item.availType}}</span>
+                <span ng-switch-when="Cost">${{item.cost}}</span>
+                <span ng-switch-when="Damage">{{item.damage}}{{item.damageType}}</span>
+                <span ng-switch-default>{{item[field.toLowerCase()]}}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
