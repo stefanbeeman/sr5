@@ -5,6 +5,7 @@ angular.module('sr5App', [
     'ngResource',
     'ngSanitize',
     'ngRoute',
+    'ui.bootstrap',
     'firebase',
 ])    
     .config( ($routeProvider) ->

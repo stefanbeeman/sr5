@@ -1,0 +1,30 @@
+<div class="input-group">
+    <span class="input-group-btn">
+        <span class="btn btn-default" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false" ng-model="form['str']">STR</span>
+    </span>
+    <input type="number" placeholder="DV" class="form-control" ng-model="form['damage']">
+    <span class="input-group-btn">
+        <dropselect ngModel="form['damageType']">
+            <li value="P"><a>Physical</a></li>
+            <li value="S"><a>Stun</a></li>
+            <li value="M"><a>Matrix</a></li>
+        </dropselect>
+    </span>
+    <span class="input-group-btn">
+        <dropselect ngModel="form['damageElement']">
+            <li value="null"><a>No Element</a></li>
+            <li value="a"><a>Acid (a)</a></li>
+            <li value="b"><a>Blast (b)</a></li>
+            <li value="c"><a>Cold (c)</a></li>
+            <li value="e"><a>Electricity (e)</a></li>
+            <li value="f"><a>Fire (f)</a></li>
+            <li value="l"><a>Light (l)</a></li>
+            <li value="m"><a>Metal (m)</a></li>
+            <li value="sa"><a>Sand (sa)</a></li>
+            <li value="sm"><a>Smoke (sm)</a></li>
+            <li value="s"><a>Sonic (s)</a></li>
+            <li value="w"><a>Water (w)</a></li>
+        </dropselect>
+    </span>
+
+</div>

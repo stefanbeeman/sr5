@@ -13,3 +13,7 @@ table.stats .label {
 .label-vehicle {
     background-color: #f78a1d;
 }
+
+textarea {
+   resize: none;
+}

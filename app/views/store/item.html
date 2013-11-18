@@ -1,1 +1,23 @@
-<p> This is the view for item {{item}} in collection {{model}}</p>
+<div class="page-header">
+    <h3>
+        <span>{{item.name}}</span>
+        <small ng-if="item.maxRating > 0">(Rating 1-{{item.maxRating}})</small>
+    </h3>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th ng-repeat="field in fields">{{field}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td ng-repeat="field in fields" ng-switch="field">
+                <span ng-switch-when="Damage">{{renderDamageCode(item)}}</span>
+                <a ng-switch-when="Name" href="#/store/{{model}}/{{key}}">{{item.name}}</a>
+                <span ng-switch-default>{{item[field.toLowerCase()]}}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>{{item.description}}</p>

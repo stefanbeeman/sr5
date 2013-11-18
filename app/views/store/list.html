@@ -1,17 +1,39 @@
+<div class="page-header">
+    <h3>{{page_header}}</h3>
+</div>
 <table class="table table-hover">
     <thead>
         <tr>
+            <th>Name</th>
             <th ng-repeat="field in fields">{{field}}</th>
+            <th>Avail</th>
+            <th>Cost</th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="item in list">
+        <tr ng-repeat="(key, item) in list">
+            <td>
+                <a href="#/store/{{model}}/{{key}}">{{item.name}}</a>
+                <span ng-if="item.maxRating > 0">(Rating 1-{{item.maxRating}})</span>
+            </td>
             <td ng-repeat="field in fields" ng-switch="field">
-                <span ng-switch-when="Avail">{{item.avail}}{{item.availType}}</span>
-                <span ng-switch-when="Cost">${{item.cost}}</span>
-                <span ng-switch-when="Damage">{{item.damage}}{{item.damageType}}</span>
+                <span ng-switch-when="Damage">{{renderDamageCode(item)}}</span>
                 <span ng-switch-default>{{item[field.toLowerCase()]}}</span>
+            </td>
+            <td>
+                <span ng-if="item.maxRating > 0">Rating x </span>
+                <span>{{item.avail}}{{item.availType}}</span>
+            </td>
+            <td>
+                <span ng-if="item.maxRating > 0">Rating x </span>
+                <span>${{item.cost}}</span>
             </td>
         </tr>
     </tbody>
 </table>
+
+<div class="row">
+    <div class="col-md-4 col-offset-md-4">
+        <a href="#/store/{{model}}/add" type="button" class="btn btn-primary">Add Item</a>
+    </div>
+</div>

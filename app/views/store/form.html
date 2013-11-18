@@ -1,1 +1,38 @@
-<p>This is the form for {{model}}<span ng-if="action == 'edit'"> editing {{item}}</span></p>
+<form role="form" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" placeholder="Name" ng-model="form['name']">
+        </div>
+        <label class="col-sm-2 control-label">Max. Rating</label>
+        <div class="col-sm-2">
+            <input type="number" class="form-control" placeholder="Max. Rating" ng-model="form['max_rating']">
+        </div>
+    </div>
+
+    <div class="form-group" ng-repeat="field in fields" ng-switch="field">
+        <label class="col-sm-2 control-label">{{field}}</label>
+
+        <div class="col-sm-10" ng-switch-when="Damage">
+            <div ng-include="'views/form/damage.html'"></div>
+        </div>
+
+        <div class="col-sm-10" ng-switch-default>
+            <input type="number" class="form-control" placeholder="{{field}}" ng-model="form[field]">
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" ng-model="form['description']"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-2">
+            <span type="button" class="btn btn-primary">Save</span>
+        </div>
+    </div>
+</form>
