@@ -11,19 +11,7 @@
         </dropselect>
     </span>
     <span class="input-group-btn">
-        <dropselect ngModel="form['damageElement']">
-            <li value="null"><a>No Element</a></li>
-            <li value="a"><a>Acid (a)</a></li>
-            <li value="b"><a>Blast (b)</a></li>
-            <li value="c"><a>Cold (c)</a></li>
-            <li value="e"><a>Electricity (e)</a></li>
-            <li value="f"><a>Fire (f)</a></li>
-            <li value="l"><a>Light (l)</a></li>
-            <li value="m"><a>Metal (m)</a></li>
-            <li value="sa"><a>Sand (sa)</a></li>
-            <li value="sm"><a>Smoke (sm)</a></li>
-            <li value="s"><a>Sonic (s)</a></li>
-            <li value="w"><a>Water (w)</a></li>
+        <dropselect ngModel="form['damageElement']" items="elements">
         </dropselect>
     </span>
 

@@ -1,6 +1,8 @@
+
 <a class="btn btn-default" dropdown-toggle>
-    <span>No Element</span>
+    <span>{{text}}</span>
     <i class="fa fa-caret-down"></i>
 </a>
-<ul class="dropdown-menu" role="menu" ng-transclude>
+<ul class="dropdown-menu" role="menu">
+    <li ng-repeat="(key, value) in items" value="{{key}}" ng-click="setValue(value)"><a>{{value}}</a></li>
 </ul>

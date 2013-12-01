@@ -3,18 +3,13 @@
 angular.module('sr5App')
     .directive('dropselect', () ->
         templateUrl: 'views/form/dropselect.html'
+        controller: ($scope) ->
+            $scope.text = ''
+
+            $scope.setValue = (value) ->
+                $scope.text = value
+        scope:
+            items: '=items'
         restrict: 'E'
         transclude: true
-        link: (scope, element, attrs) ->
-            
-            set_value = (li) ->
-                element.find('a').find('span').text( li.text() )
-                scope.$eval(element.attr('ngModel') + ' = \'' + li.attr('value') + '\'')
-    
-            first = element.find('li').eq(0)
-            set_value(first)
-
-            element.find('li').on 'click', ->
-                li = angular.element(this)
-                set_value(li)
     )
